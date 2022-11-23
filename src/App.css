@@ -28,6 +28,36 @@
   color: #61dafb;
 }
 
+html{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.concessionaria{
+  border: solid 1px black;
+  margin: 2%;
+  height: 100vh;
+  display: flex;
+  flex-direction: space-around;
+  transform: rotate(5deg)
+}
+
+.area-1{
+  float: left;
+  margin: 10%;
+  padding: 9%;
+  transform: rotate(22deg);
+  border: solid 1px black;
+}
+.area-2{
+  margin: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 15%;
+  padding-bottom: 5%;
+  transform: rotate(355deg);
+  border: solid 1px black;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

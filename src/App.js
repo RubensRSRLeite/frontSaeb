@@ -1,25 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from "react";
+import api from "./services/api";
 
-function App() {
+
+export default function App() {
+  
+  const [automovel, setAutomovel] = useState();
+
+  useEffect(() => {
+    api
+      .get("/automovel")
+      .then((response) => setAutomovel(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>nome: {automovel?.nome}</p>
+      <p>preço: {automovel?.preco}</p>
     </div>
   );
 }
-
-export default App;
